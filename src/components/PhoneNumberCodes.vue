@@ -103,7 +103,7 @@ export default{
 
   <router-view></router-view>
   <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-  <div class="wrapper" style="max-width: 600px; flex: 1; margin-right: 20px;">
+  <div class="wrapper" style="max-width: 600px; max-height: 600px; flex: 1; margin-right: 20px;">
     <h1>Получить телефонный код по его id</h1>
     <input type="text" @input="this.get_id = $event.target.value" placeholder="Введите id кода">
     <button @click="getPhoneNumberCodeById" v-show="get_id!=''">Получить телефонный код</button>
