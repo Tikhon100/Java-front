@@ -38,7 +38,7 @@
     methods: {
       async fetchCountries() {
         try {
-          const response = await fetch('http://localhost:8080/api/v1/country/all');
+          const response = await fetch('https://javalabs-looq.onrender.com/api/v1/country/all');
           if (!response.ok) {
             throw new Error('Ошибка при получении данных');
           }

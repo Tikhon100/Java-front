@@ -38,7 +38,7 @@ export default{
       }
       this.error = "";
 
-      axios.get(`https://javalabs-looq.onrender.com//api/v1/country/${this.id}`)
+      axios.get(`https://javalabs-looq.onrender.com/api/v1/country/${this.id}`)
       .then(res => {
         const country = res.data;
         // Формирование строки с языками
@@ -75,7 +75,7 @@ export default{
         }
       }
       this.update_name_error = "";
-      axios.patch(`https://javalabs-looq.onrender.com//api/v1/country/updateName/${this.update_name_country_id}?name=${this.new_name}`)  
+      axios.patch(`https://javalabs-looq.onrender.com/api/v1/country/updateName/${this.update_name_country_id}?name=${this.new_name}`)  
       .then(res => {
         const country = res.data;
         // Формирование строки с языками
@@ -103,7 +103,7 @@ export default{
         return false;
       }
       this.delete_error = "";
-      axios.delete(`https://javalabs-looq.onrender.com//api/v1/country/delete/${this.delete_id}`)
+      axios.delete(`https://javalabs-looq.onrender.com/api/v1/country/delete/${this.delete_id}`)
       .then(res => {
         this.delete_message = "Успешно удалено!";
       })
@@ -127,7 +127,7 @@ export default{
       this.country.languages.splice(index, 1)
     },
     submitCountry() {
-      axios.post('https://javalabs-looq.onrender.com//api/v1/country/create', this.country)
+      axios.post('https://javalabs-looq.onrender.com/api/v1/country/create', this.country)
         .then(response => {
           this.country.name = ''; // Сбросить название страны
         this.country.phoneNumberCodes = []; // Сбросить массив телефонных кодов
