@@ -163,7 +163,7 @@ export default{
 .wrapper{
   margin-top: 30px;
   width: 600px;
-  height: 200px;
+  height: 300px;
   border-radius: 30px;
   padding: 20px;
   background: #FFCf80;
