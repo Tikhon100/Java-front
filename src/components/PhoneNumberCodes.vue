@@ -108,8 +108,8 @@ export default{
     <input type="text" @input="this.get_id = $event.target.value" placeholder="Введите id кода">
     <button @click="getPhoneNumberCodeById" v-show="get_id!=''">Получить телефонный код</button>
     <p class="error">{{ get_error }}</p>
-    <div style="display: flex; flex-direction: column; align-items: flex-start; word-break: break-word;">
-      <div class="country-info">
+    <div style="display: flex; flex-wrap: wrap;">
+      <div class="country-info" style="margin-right: 20px;">
         <p class="label" v-if="get_code != ''">Телефонный код:</p>
         <p class="value">{{ get_code }}</p>
       </div>
