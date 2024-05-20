@@ -103,19 +103,22 @@ export default{
 
   <router-view></router-view>
   <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-  <div class="wrapper" style="max-width: 600px; flex: 1; margin-right: 20px;">
+  <div class="wrapper" style="max-width: 600px; flex: 1; margin-right: 20px; display: flex; flex-direction: column;">
     <h1>Получить телефонный код по его id</h1>
     <input type="text" @input="this.get_id = $event.target.value" placeholder="Введите id кода">
     <button @click="getPhoneNumberCodeById" v-show="get_id!=''">Получить телефонный код</button>
     <p class="error">{{ get_error }}</p>
-    <div class="country-info">
-      <p class="label" v-if="get_code != ''">Телефонный код:</p>
-      <p class="value">{{ get_code }}</p>
+    <div style="display: flex; flex-direction: column; align-items: flex-start; word-break: break-word;">
+      <div class="country-info">
+        <p class="label" v-if="get_code != ''">Телефонный код:</p>
+        <p class="value">{{ get_code }}</p>
+      </div>
+      <div class="country-info">
+        <p class="label" v-if="get_country !=''">Страна:</p>
+        <p class="value">{{ get_country }}</p>
+      </div>
     </div>
-    <div class="country-info">
-      <p class="label" v-if="get_country !=''">Страна:</p>
-      <p class="value">{{ get_country }}</p>
-    </div>
+  </div>
   </div>
 
   <div class="wrapper" style="max-width: 600px; flex: 1;">
