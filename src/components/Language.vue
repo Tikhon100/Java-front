@@ -37,7 +37,7 @@ export default{
     },
     async fetchLanguageData() {
       try {
-        const response = await fetch(`http://localhost:8080/api/v1/language/${this.languageId}`);
+        const response = await fetch(`https://javalabs-looq.onrender.com//api/v1/language/${this.languageId}`);
         if (!response.ok) {
           throw new Error('Ошибка при получении данных');
         }
@@ -56,7 +56,7 @@ export default{
     },
     async deleteLanguage() {
       try {
-        const response = await axios.delete(`http://localhost:8080/api/v1/language/delete/${this.deleteLanguageId}`);
+        const response = await axios.delete(`https://javalabs-looq.onrender.com//api/v1/language/delete/${this.deleteLanguageId}`);
         this.deleteResponse = 'Язык успешно удален';
       } catch (error) {
         this.deleteResponse = 'Ошибка при удалении языка';
@@ -77,7 +77,7 @@ export default{
     },
     async changeLanguageName() {
   try {
-    const response = await axios.patch(`http://localhost:8080/api/v1/language/${this.changeLanguageId}`, {
+    const response = await axios.patch(`https://javalabs-looq.onrender.com//api/v1/language/${this.changeLanguageId}`, {
       name: this.changeLanguageName
     });
     this.changeResponse = "Имя языка успешно изменено";
@@ -105,7 +105,7 @@ export default{
     async createLanguage() {
       try {
         const countryIds = this.newLanguageCountryIds.filter((id) => id.trim() !== '').join(',');
-        const response = await axios.post(`http://localhost:8080/api/v1/language/create/?name=${this.newLanguageName}&countryIds=${countryIds}`);
+        const response = await axios.post(`https://javalabs-looq.onrender.com//api/v1/language/create/?name=${this.newLanguageName}&countryIds=${countryIds}`);
         this.createResponse = 'Язык успешно создан';
         this.newLanguageName = '';
         this.newLanguageCountryIds = [''];
