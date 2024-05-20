@@ -49,7 +49,7 @@
       },
       async fetchLanguages() {
         try {
-          const response = await fetch('http://localhost:8080/api/v1/language/all');
+          const response = await fetch('https://javalabs-looq.onrender.com/api/v1/language/all');
           if (!response.ok) {
             throw new Error('Ошибка при получении данных');
           }
@@ -60,7 +60,7 @@
       },
       async fetchPhoneCodes() {
         try {
-          const response = await fetch('http://localhost:8080/api/v1/phoneNumberCode/all');
+          const response = await fetch('https://javalabs-looq.onrender.com/api/v1/phoneNumberCode/all');
           if (!response.ok) {
             throw new Error('Ошибка при получении данных');
           }

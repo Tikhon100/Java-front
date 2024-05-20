@@ -33,7 +33,7 @@ export default{
     }
     this.get_error = "";
     
-    axios.get(`https://javalabs-looq.onrender.com//api/v1/phoneNumberCode/${this.get_id}`)
+    axios.get(`https://javalabs-looq.onrender.com/api/v1/phoneNumberCode/${this.get_id}`)
     .then(res => {
         const response = res.data;
         this.get_code = response.code;
@@ -53,7 +53,7 @@ export default{
         }
         this.delete_error = "";
     
-        axios.delete(`https://javalabs-looq.onrender.com//api/v1/phoneNumberCode/delete/${this.get_id}`)
+        axios.delete(`https://javalabs-looq.onrender.com/api/v1/phoneNumberCode/delete/${this.get_id}`)
         .then(res => {
             this.delete_message = "Успешно удалено";
         })
@@ -69,7 +69,7 @@ export default{
         }
         this.update_code_error = "";
 
-        axios.put(`https://javalabs-looq.onrender.com//api/v1/phoneNumberCode/update/${this.update_code_id}?code=${this.update_code_new_value}`)
+        axios.put(`https://javalabs-looq.onrender.com/api/v1/phoneNumberCode/update/${this.update_code_id}?code=${this.update_code_new_value}`)
         .then(res => {
             this.update_code_message = "Успешно ";
         })
@@ -85,7 +85,7 @@ export default{
         }
         this.create_code_error = "";
 
-        axios.post(`https://javalabs-looq.onrender.com//api/v1/phoneNumberCode/create/${this.create_code_country_id}?code=${this.create_code_value}`)
+        axios.post(`https://javalabs-looq.onrender.com/api/v1/phoneNumberCode/create/${this.create_code_country_id}?code=${this.create_code_value}`)
         .then(res => {
             this.create_code_message = "Успешно ";
         })

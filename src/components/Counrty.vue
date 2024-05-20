@@ -205,23 +205,25 @@ export default{
     <p style="margin-top: 20px;">{{ delete_message }}</p>
   </div>
 
-  <div class="wrapper" style="margin-left: 20px; max-width: 600px; flex: 1;">
+  <div class="wrapper" style="margin-left: 20px; max-width: 600px; flex: 1; display: flex; flex-direction: column;">
     <h1>Изменить имя страны по ее id</h1>
-    <input type="text" @input="this.update_name_country_id = $event.target.value" placeholder="Введите id страны">
-    <input type="text" style="margin-left: 20px" @input="this.new_name = $event.target.value" v-show="update_name_country_id!=''" placeholder="Введите новое имя страны">
-    <button @click="updateNameCountry" v-show="(new_name!=null && update_name_country_id!='')">Обновить имя страны</button>
+    <div style="display: flex; align-items: center;">
+        <input type="text" @input="this.update_name_country_id = $event.target.value" placeholder="Введите id страны">
+        <input type="text" style="margin-left: 20px" @input="this.new_name = $event.target.value" v-show="update_name_country_id!=''" placeholder="Введите новое имя страны">
+        <button @click="updateNameCountry" v-show="(new_name!=null && update_name_country_id!='')">Обновить имя страны</button>
+    </div>
     <p class="error">{{ update_name_error }}</p>
     <div class="country-info">
-      <p class="label" v-if="update_name_error == ''">Имя страны:</p>
-      <p class="value">{{ upd_name_country_name }}</p>
+        <p class="label" v-if="update_name_error == ''">Имя страны:</p>
+        <p class="value">{{ upd_name_country_name }}</p>
     </div>
     <div class="country-info">
-      <p class="label" v-if="update_name_error ==''">Телефонные коды:</p>
-      <p class="value">{{ upd_name_country_phoneNumberCodes }}</p>
+        <p class="label" v-if="update_name_error ==''">Телефонные коды:</p>
+        <p class="value">{{ upd_name_country_phoneNumberCodes }}</p>
     </div>
     <div class="country-info">
-      <p class="label" v-if="update_name_error == ''">Языки:</p>
-      <p class="value">{{ upd_name_country_languages }}</p>
+        <p class="label" v-if="update_name_error == ''">Языки:</p>
+        <p class="value">{{ upd_name_country_languages }}</p>
     </div>
   </div>
 </div>
